@@ -40,7 +40,10 @@ public class Faculty {
 
         ArrayList<Assistent> profassis = new ArrayList<>();
 
-        if (!profs.contains(professor)) return profassis;
+        if (!profs.contains(professor)){
+
+            return profassis;
+        }
 
         for (Assistent assi : assis) {
             Professor p = assi.getBoss();
@@ -51,4 +54,30 @@ public class Faculty {
         return profassis;
     }
 
+    public ArrayList<Professor> getProfWithAssis(){
+
+        ArrayList<Professor> profsWithAssis = new ArrayList<>();
+
+        for(Assistent assi : assis){
+
+            Professor p = assi.getBoss();
+
+            if(p != null && !profsWithAssis.contains(p)){
+               
+                profsWithAssis.add(p);
+            }
+        }
+
+        return profsWithAssis;
+    }
+
+    public int getAmountProfs(){
+
+        return profs.size();
+    }
+
+    public int getAmountAssis(){
+
+        return assis.size();
+    }
 }

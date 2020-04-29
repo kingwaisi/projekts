@@ -4,7 +4,7 @@ public class Professor {
 
     private String name;
     private int age;
-    private boolean isTalking=false;
+    private boolean isTalking= true;
     private String researchArea=null;
     private Faculty faculty;
 

@@ -6,11 +6,13 @@ package io.fp.campus;
 public class App {
 
     public static void main(String[] args) {
+        
         Faculty inf = new Faculty("INF");
+
         Professor schmolli = new Professor("Schmollinger", 77, "BPM", inf);
         System.out.println(schmolli.getName());
         System.out.println("Hält er Vorlesung? "+schmolli.isTalking());
-        schmolli.setTalking(true);
+        schmolli.setTalking(false);
         System.out.println("Hält er Vorlesung? "+schmolli.isTalking());
 
         Assistent kevin = new Assistent("Jovanovic", 26, inf);
@@ -34,5 +36,10 @@ public class App {
 
         System.out.println(inf.getAssisOfProf(schmolli));
 
+        System.out.println(inf.getProfWithAssis());
+
+        System.out.println("Anzahl Profs: " + inf.getAmountProfs());
+
+        System.out.println("Anzahl Assis: " + inf.getAmountAssis());
     }
 }
