@@ -21,11 +21,13 @@ public class Faculty {
     }
 
     public void addProfessor(Professor professor) {
-        profs.add(professor);
+        if (!profs.contains(professor))
+            profs.add(professor);
     }
 
     public void addAssistent(Assistent assistent) {
-        assis.add(assistent);
+        if (!assis.contains(assistent))
+            assis.add(assistent);
     }
 
     public ArrayList<Professor> getProfs() {
