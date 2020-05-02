@@ -30,9 +30,9 @@ public class FacultyTest {
         inf.addAssistent(backe);
     }
     @Test
-    void testGetProfWithAssis() {
+    void testGetProfsWithAssis() {
         ArrayList<Professor> profs = inf.getProfs();
-        ArrayList<Professor> profsWithAssis = inf.getProfWithAssis();
+        ArrayList<Professor> profsWithAssis = inf.getProfsWithAssis();
         assertEquals(profs, profsWithAssis);
     }
 }

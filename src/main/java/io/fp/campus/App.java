@@ -36,7 +36,7 @@ public class App {
 
         System.out.println(inf.getAssisOfProf(schmolli));
 
-        System.out.println(inf.getProfWithAssis());
+        System.out.println(inf.getProfsWithAssis());
 
         System.out.println("Anzahl Profs: " + inf.getAmountProfs());
 

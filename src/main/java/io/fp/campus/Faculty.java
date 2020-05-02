@@ -56,7 +56,7 @@ public class Faculty {
         return profassis;
     }
 
-    public ArrayList<Professor> getProfWithAssis(){
+    public ArrayList<Professor> getProfsWithAssis(){
 
         ArrayList<Professor> profsWithAssis = new ArrayList<>();
 
