@@ -7,39 +7,39 @@ public class App {
 
     public static void main(String[] args) {
         
-        Faculty inf = new Faculty("INF");
+        Faculty hogwarts = new Faculty("Hogwarts");
 
-        Professor schmolli = new Professor("Schmollinger", 77, "BPM", inf);
-        System.out.println(schmolli.getName());
-        System.out.println("Hält er Vorlesung? "+schmolli.isTalking());
-        schmolli.setTalking(false);
-        System.out.println("Hält er Vorlesung? "+schmolli.isTalking());
+        Professor dumbledore = new Professor("Dumbledore", 77, "BPM", hogwarts);
+        System.out.println(dumbledore.getName());
+        System.out.println("Hält er Vorlesung? "+dumbledore.isTalking());
+        dumbledore.setTalking(false);
+        System.out.println("Hält er Vorlesung? "+dumbledore.isTalking());
 
-        Assistent kevin = new Assistent("Jovanovic", 26, inf);
-        kevin.setBoss(schmolli);
-        System.out.println(kevin.getName());
-        System.out.println(kevin.getBoss().getName());
+        Assistent hagrid = new Assistent("Hagrid", 26, hogwarts);
+        hagrid.setBoss(dumbledore);
+        System.out.println(hagrid.getName());
+        System.out.println(hagrid.getBoss().getName());
 
-        Assistent juergen = new Assistent("Krauß", 30, inf);
-        juergen.setBoss(schmolli);
+        Assistent dobby = new Assistent("Dobby", 130, hogwarts);
+        dobby.setBoss(dumbledore);
 
-        Assistent backe = new Assistent("Backe", 50, inf);
+        Assistent pince = new Assistent("Madam Pince", 50, hogwarts);
         
-        inf.addProfessor(schmolli);
-        inf.addAssistent(kevin);
-        inf.addAssistent(juergen);
-        inf.addAssistent(backe);
+        hogwarts.addProfessor(dumbledore);
+        hogwarts.addAssistent(hagrid);
+        hogwarts.addAssistent(dobby);
+        hogwarts.addAssistent(pince);
 
-        System.out.println("Fakultät "+ inf.getName());
-        System.out.println(inf.getProfs().toString());
-        System.out.println(inf.getAssis().toString());
+        System.out.println("Fakultät "+ hogwarts.getName());
+        System.out.println(hogwarts.getProfs().toString());
+        System.out.println(hogwarts.getAssis().toString());
 
-        System.out.println(inf.getAssisOfProf(schmolli));
+        System.out.println(hogwarts.getAssisOfProf(dumbledore));
 
-        System.out.println(inf.getProfsWithAssis());
+        System.out.println(hogwarts.getProfsWithAssis());
 
-        System.out.println("Anzahl Profs: " + inf.getAmountProfs());
+        System.out.println("Anzahl Profs: " + hogwarts.getAmountProfs());
 
-        System.out.println("Anzahl Assis: " + inf.getAmountAssis());
+        System.out.println("Anzahl Assis: " + hogwarts.getAmountAssis());
     }
 }

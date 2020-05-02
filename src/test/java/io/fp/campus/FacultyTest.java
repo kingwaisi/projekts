@@ -8,31 +8,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FacultyTest {
 
-    Faculty inf;
+    Faculty hogwarts;
 
     @BeforeEach
     void setUp() {
-        inf = new Faculty("INF");
-        Professor schmolli = new Professor("Schmollinger", 77, "BPM", inf);
-        schmolli.setTalking(false);
+        hogwarts = new Faculty("Hogwarts");
+        Professor dumbledore = new Professor("Dumbledore", 77, "BPM", hogwarts);
+        dumbledore.setTalking(false);
         
-        Assistent kevin = new Assistent("Jovanovic", 26, inf);
-        kevin.setBoss(schmolli);
+        Assistent hagrid = new Assistent("Hagrid", 26, hogwarts);
+        hagrid.setBoss(dumbledore);
 
-        Assistent juergen = new Assistent("Krauß", 30, inf);
-        juergen.setBoss(schmolli);
+        Assistent dobby = new Assistent("Dobby", 130, hogwarts);
+        dobby.setBoss(dumbledore);
 
-        Assistent backe = new Assistent("Backe", 50, inf);
+        Assistent pince = new Assistent("Madam Pince", 40, hogwarts);
         
-        inf.addProfessor(schmolli);
-        inf.addAssistent(kevin);
-        inf.addAssistent(juergen);
-        inf.addAssistent(backe);
+        hogwarts.addProfessor(dumbledore);
+        hogwarts.addAssistent(hagrid);
+        hogwarts.addAssistent(dobby);
+        hogwarts.addAssistent(pince);
     }
     @Test
     void testGetProfsWithAssis() {
-        ArrayList<Professor> profs = inf.getProfs();
-        ArrayList<Professor> profsWithAssis = inf.getProfsWithAssis();
+        ArrayList<Professor> profs = hogwarts.getProfs();
+        ArrayList<Professor> profsWithAssis = hogwarts.getProfsWithAssis();
         assertEquals(profs, profsWithAssis);
     }
 }
