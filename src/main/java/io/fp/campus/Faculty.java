@@ -21,8 +21,12 @@ public class Faculty {
     }
 
     public void addProfessor(Professor professor) {
-        if (!profs.contains(professor))
+        if (!profs.contains(professor)) {
             profs.add(professor);
+        }
+        else {
+            throw new RuntimeException();
+        }
     }
 
     public void addAssistent(Assistent assistent) {
